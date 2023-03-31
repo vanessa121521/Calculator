@@ -1,4 +1,4 @@
-x = input("Give me a number >")
+x = input("Give me a number >")  #how to add break in the first line?
 def validate_int (x):
      try:
            int (x)
@@ -6,10 +6,17 @@ def validate_int (x):
      except Exception:
           return False
 while validate_int(x) == False:
-     x = input('I SAID A NUMBER >')
+     x = input('I SAID A NUMBER or enter q to quit >')
+     if x == 'q':
+          break
      
-op = int(input( "Enter 1 for + \nEnter 2 for - \nEnter 3 for × \nEnter 4 for ÷\n"))
-y = input("to >")
+     
+s = {1, 2, 3, 4}
+op = int(input( "Enter 1 for + \nEnter 2 for - \nEnter 3 for × \nEnter 4 for ÷ >"))
+if op not in s:
+     op = input( "\nInvalid input, try again \nEnter 1 for + \nEnter 2 for - \nEnter 3 for × \nEnter 4 for ÷ >")
+     
+y = input("\nto >")
 def validate_int (y):
      try:
            int (y)
@@ -31,5 +38,8 @@ elif op == 3:
 elif op == 4:
      print("{}÷{}=".format(x, y), x/y)
 else:
-     print("you did something wrong, please start over.")
+     print("I don't know but something went wrong")
+
+
+
 
